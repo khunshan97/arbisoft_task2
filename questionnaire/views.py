@@ -40,9 +40,8 @@ class AnswerViewset(viewsets.ViewSet):
 class LoggerView(views.APIView):
     # print('ok')
     def post(self, request):
-        print(request.data)
-        questionnaire = Questionnaire.objects.get(pk=request.data['questionnaire']).questions.first()
-        choices = request.data['choices']
-        print(questionnaire, choices)
-
-        return Response('ok')
+        data = request.data.get("data")
+        questionnaire = Questionnaire.objects.get(pk=data.get('questionnaire')).questions.first()
+        choices = data.get('choices')
+        print(questionnaire,': ', " -> ".join(choices))
+        return Response(status=200)
