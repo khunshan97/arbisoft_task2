@@ -1,0 +1,31 @@
+{
+  "Question": "Are you hungry? (Yes/No)",
+  "Question_ID": "1",
+    "Answer": {
+      "Yes": {
+        "Belong": "1",
+        "Question": "What would you like to eat? (Hamburger/Pizza/Pop Corn/Chicken)",
+        "Question_ID": "2",
+        "Answer": {
+          "Hamburger": "Nice, I will order a hamburger for you!",
+          "Pizza": {
+            "Question": "Do you want a pizza with cheese? (Yes/No)",
+            "Answer": {
+              "Yes": "Nice, I will order a pizza with cheese for you!",
+              "No": "Nice, I will order a pizza without cheese for you!"
+            }
+          },
+          "Pop Corn": "Here is your pop corn",
+          "Chicken": "Here is your chicken"
+        }
+      },
+      "No": {
+        "Belong": "1",
+        "Question": "Are you thirsty? (Yes/No)",
+        "Answer": {
+          "Yes": "Here is your drink",
+          "No": "Ok, have a nice day!"
+        }
+      }
+    }
+}

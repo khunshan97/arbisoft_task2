@@ -1,0 +1,34 @@
+{
+  "questionnaire": {
+    "title": "Questionaire 1",
+    "description": "This is a description of the questionnaire",
+    "questions": [
+      {
+        "title": "Question 1",
+        "description": "This is a description of the question",
+        "type": "text",
+        "required": true,
+        "questions": [
+          {
+            "title": "Question 1.1",
+            "description": "This is a description of the question",
+            "type": "text",
+            "required": true
+          },
+          {
+            "title": "Question 1.2",
+            "description": "This is a description of the question",
+            "type": "text",
+            "required": true
+          }
+        ]
+      },
+      {
+        "title": "Question 2",
+        "description": "This is a description of the question",
+        "type": "text",
+        "required": true
+      }
+    ]
+  }
+}

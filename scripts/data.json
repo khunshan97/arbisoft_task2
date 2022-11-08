@@ -1,0 +1,61 @@
+{
+  "questionnaire": {
+    "name": "Food Menu",
+    "questions": {
+      "question_text": "Are you hungry? (Yes/No)",
+      "answers": [
+        {
+          "answer_text": "yes",
+          "next_question": {
+            "question_text": "what do you want to order?",
+            "answers": [
+              {
+                "answer_text": "pizza",
+                "next_question": {
+                  "question_text": "Okay. I will order pizza for you.",
+                  "answers": []
+                }
+              },
+              {
+                "answer_text": "burger",
+                "next_question": {
+                  "question_text": "Okay. I will order burger for you.",
+                  "answers": []
+                }
+              },
+              {
+                "answer_text": "pasta",
+                "next_question": {
+                  "question_text": "Okay. I will order pasta for you.",
+                  "answers": []
+                }
+              }
+            ]
+          }
+        },
+        {
+          "answer_text": "no",
+          "next_question": {
+            "question_text": "Are you sure? (Yes/No)",
+            "answers": [
+              {
+                "answer_text": "yes",
+                "next_question": {
+                  "question_text": "Thank you for your time",
+                  "answers": []
+                }
+              },
+              {
+                "answer_text": "no",
+                "next_question": {
+                  "question_text": "Okay, Stay hungry",
+                  "answers": []
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
