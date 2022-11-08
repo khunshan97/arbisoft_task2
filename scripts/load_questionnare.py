@@ -32,28 +32,25 @@ def create_answer(answer_text, question, next_question=None):
         answer_obj = Answer.objects.create(answer_text=answer_text, question=question)
     return answer_obj
 
+
 def load_data():
     json_file = open(os.path.join(os.path.dirname(__file__), 'data.json'))
     data = json.load(json_file)
     print(f'loaded data: {data}')
     questionnaire = Questionnaire.objects.create(name=data['questionnaire']['name'])
-    create_recursively(data['questionnaire']['questions'],questionnaire)
+    create_recursively(data['questionnaire']['questions'], questionnaire)
 
-def create_recursively(question,questionnaire):
 
-    if question:
-        obj = Question.objects.create(question_text=question['question_text'],questionnaire=questionnaire)
-        print(f'Question created: {obj}')
+def create_recursively(question, questionnaire):
+    # if question:
+    obj = Question.objects.create(question_text=question['question_text'], questionnaire=questionnaire)
+    print(f'Question created: {obj}')
 
-        for answer in question['answers']:
-            next_question = create_recursively(answer['next_question'],questionnaire)
-            answer = Answer.objects.create(question=obj, answer_text=answer['answer_text'], next_question=next_question)
-            print(f'Answer created: {answer}, Next Question: {next_question}' )
-        return obj
+    for answer in question['answers']:
+        next_question = create_recursively(answer['next_question'], questionnaire)
+        answer = Answer.objects.create(question=obj, answer_text=answer['answer_text'], next_question=next_question)
+        print(f'Answer created: {answer}, Next Question: {next_question}')
+    return obj
+
 
 load_data()
-
-
-
-
-
